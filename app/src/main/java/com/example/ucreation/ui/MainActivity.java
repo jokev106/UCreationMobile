@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         BottomNavigationView navigationView = findViewById(R.id.bottomNavigation);
 
         AppBarConfiguration configuration = new AppBarConfiguration
@@ -44,5 +45,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         return NavigationUI.navigateUp(navController, (Openable) null);
+
     }
 }
