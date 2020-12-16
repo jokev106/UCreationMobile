@@ -12,13 +12,12 @@ import com.example.ucreation.R;
 
 
 public class CreationFragment extends Fragment {
-    
+
 
     public CreationFragment() {
         // Required empty public constructor
     }
-
-
+    
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
