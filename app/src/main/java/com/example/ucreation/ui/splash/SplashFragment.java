@@ -4,9 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
+
+import android.os.Handler;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +26,7 @@ import butterknife.ButterKnife;
 
 public class SplashFragment extends Fragment {
 
+
     @BindView(R.id.btncreation)
     Button button;
 
@@ -28,7 +34,6 @@ public class SplashFragment extends Fragment {
     public SplashFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,11 +45,32 @@ public class SplashFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
+        new Handler().postDelayed(() -> {
+            NavDirections action = SplashFragmentDirections.actionstologin();
+            Navigation.findNavController(view).navigate(action);
+        }, 1500);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+
         ButterKnife.bind(this, view);
 
         button.setOnClickListener(v -> {
             NavDirections action = SplashFragmentDirections.actionSplashFragmentToCreationFragment();
             Navigation.findNavController(view).navigate(action);
         });
+
     }
 }
