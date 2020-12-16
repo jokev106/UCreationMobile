@@ -4,12 +4,15 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.os.Handler;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +25,10 @@ import butterknife.ButterKnife;
 
 
 public class SplashFragment extends Fragment {
+
+
+    @BindView(R.id.btncreation)
+    Button button;
 
 
     public SplashFragment() {
@@ -40,6 +47,7 @@ public class SplashFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
         new Handler().postDelayed(() -> {
             NavDirections action = SplashFragmentDirections.actionstologin();
             Navigation.findNavController(view).navigate(action);
@@ -56,5 +64,13 @@ public class SplashFragment extends Fragment {
     public void onStop() {
         super.onStop();
         ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+
+        ButterKnife.bind(this, view);
+
+        button.setOnClickListener(v -> {
+            NavDirections action = SplashFragmentDirections.actionSplashFragmentToCreationFragment();
+            Navigation.findNavController(view).navigate(action);
+        });
+
     }
 }

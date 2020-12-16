@@ -2,15 +2,20 @@ package com.example.ucreation.ui.main.creation;
 
 import android.os.Bundle;
 
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
+import androidx.fragment.app.Fragment;
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.Button;
 
 import com.example.ucreation.R;
@@ -20,10 +25,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
+import com.example.ucreation.R;
+
+
 public class CreationFragment extends Fragment {
+
 
     @BindView(R.id.buttontodetail)
     Button button;
+
+
 
     public CreationFragment() {
         // Required empty public constructor
@@ -51,4 +62,5 @@ public class CreationFragment extends Fragment {
 
 
     }
+
 }
