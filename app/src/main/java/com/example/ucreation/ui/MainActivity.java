@@ -1,8 +1,10 @@
-package com.example.ucreation;
+package com.example.ucreation.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.ucreation.R;
 
 public class MainActivity extends AppCompatActivity {
 
