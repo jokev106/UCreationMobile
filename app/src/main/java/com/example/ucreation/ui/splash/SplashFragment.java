@@ -27,9 +27,6 @@ import butterknife.ButterKnife;
 public class SplashFragment extends Fragment {
 
 
-    @BindView(R.id.btncreation)
-    Button button;
-
 
     public SplashFragment() {
         // Required empty public constructor
@@ -65,12 +62,6 @@ public class SplashFragment extends Fragment {
         super.onStop();
         ((AppCompatActivity)getActivity()).getSupportActionBar().show();
 
-        ButterKnife.bind(this, view);
-
-        button.setOnClickListener(v -> {
-            NavDirections action = SplashFragmentDirections.actionSplashFragmentToCreationFragment();
-            Navigation.findNavController(view).navigate(action);
-        });
 
     }
 }

@@ -49,7 +49,7 @@ public class DetailFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         button.setOnClickListener(v -> {
-            NavDirections action = DetailFragmentDirections.actionDetailFragmentToCreationFragment();
+            NavDirections action = DetailFragmentDirections.actionDetailFragment2ToCreationFragment2();
             Navigation.findNavController(view).navigate(action);
         });
     }

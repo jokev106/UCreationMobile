@@ -84,7 +84,7 @@ public class LoginFragment extends Fragment {
                     public void onChanged(TokenResponse tokenResponse) {
                         if (tokenResponse != null) {
                             helper.saveAccessToken(tokenResponse.getAuthorization());
-                            NavDirections actions = LoginFragmentDirections.actionLoginFragmentToCreationFragment2();
+                            NavDirections actions = LoginFragmentDirections.actionLoginFragment3ToCreationFragment2();
                             Navigation.findNavController(view).navigate(actions);
                             Toast.makeText(requireActivity(), "Success", Toast.LENGTH_SHORT).show();
                         }

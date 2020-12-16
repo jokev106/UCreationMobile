@@ -30,12 +30,8 @@ import com.example.ucreation.R;
 
 public class CreationFragment extends Fragment {
 
-
-
     @BindView(R.id.buttontodetail)
     Button button;
-
-
 
     public CreationFragment() {
         // Required empty public constructor
@@ -56,7 +52,7 @@ public class CreationFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         button.setOnClickListener(v -> {
-            NavDirections action = CreationFragmentDirections.actionCreationFragmentToDetailFragment();
+            NavDirections action = CreationFragmentDirections.actionCreationFragment2ToDetailFragment2();
             Navigation.findNavController(view).navigate(action);
         });
 
