@@ -70,23 +70,23 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-        Objects.requireNonNull(((MainActivity)requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
+        Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
 
         viewModel = ViewModelProviders.of(requireActivity()).get(LoginViewModel.class);
-        helper =  SharedPreferenceHelper.getInstance(requireActivity());
+        helper = SharedPreferenceHelper.getInstance(requireActivity());
 
-        buttonlogin.setOnClickListener(v ->{
-            if(!etemail.getText().toString().isEmpty() && !etpassword.getText().toString().isEmpty()){
+        buttonlogin.setOnClickListener(v -> {
+            if (!etemail.getText().toString().isEmpty() && !etpassword.getText().toString().isEmpty()) {
                 String email = etemail.getText().toString().trim();
                 String password = etpassword.getText().toString().trim();
                 viewModel.login(email, password).observe(requireActivity(), new Observer<TokenResponse>() {
                     @Override
                     public void onChanged(TokenResponse tokenResponse) {
-                        if(tokenResponse != null){
+                        if (tokenResponse != null) {
                             helper.saveAccessToken(tokenResponse.getAuthorization());
                             NavDirections actions = LoginFragmentDirections.actionLoginFragmentToCreationFragment2();
                             Navigation.findNavController(view).navigate(actions);
-                            Toast.makeText(requireActivity(),  "Success", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(requireActivity(), "Success", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -94,6 +94,7 @@ public class LoginFragment extends Fragment {
 
         });
     }
+}
 
 
   
