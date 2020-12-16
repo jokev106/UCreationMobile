@@ -11,20 +11,36 @@
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
+
+            android:id="@+id/actionstologin"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_creation"
+
             android:id="@+id/action_splashFragment_to_creationFragment"
             app:destination="@id/creationFragment" />
     </fragment>
     <fragment
         android:id="@+id/creationFragment"
+
         android:name="com.example.ucreation.ui.main.creation.CreationFragment"
         android:label="fragment_creation"
         tools:layout="@layout/fragment_creation" >
         <action
+
+            android:id="@+id/action_creationFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_nav_creation_to_profileFragment"
+            app:destination="@id/loginFragment" />
+
             android:id="@+id/action_creationFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_creationFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -33,7 +49,14 @@
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/action_detailFragment_to_creationFragment"
+
+            app:destination="@id/nav_creation" />
+        <action
+            android:id="@+id/action_detailFragment_to_profileFragment"
+            app:destination="@id/loginFragment" />
+
             app:destination="@id/creationFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -42,6 +65,12 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_creationFragment2"
+
+            app:destination="@id/nav_creation" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+
             app:destination="@id/creationFragment" />
         <action
             android:id="@+id/action_loginFragment_to_profileFragment2"
@@ -52,6 +81,7 @@
         android:name="com.example.ucreation.ui.main.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
+      
         <action
             android:id="@+id/action_profileFragment_to_loginFragment2"
             app:destination="@id/loginFragment" />
