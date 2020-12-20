@@ -54,6 +54,7 @@ public class ProfileRepository {
                             String msg = object.getString("message");
                             Log.d(TAG, "onResponse" + msg);
                             message.postValue(msg);
+                            resetInstance();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
