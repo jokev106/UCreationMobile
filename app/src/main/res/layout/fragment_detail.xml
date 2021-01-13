@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/TextNamaProject"
+        android:id="@+id/TextNamaPro"
         android:layout_width="374dp"
         android:layout_height="54dp"
         android:layout_marginTop="8dp"
@@ -41,7 +41,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/TextNamaProject" />
+        app:layout_constraintTop_toTopOf="@+id/TextNamaPro" />
 
     <TextView
         android:id="@+id/CreatorProject"
