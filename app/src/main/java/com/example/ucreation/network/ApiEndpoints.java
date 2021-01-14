@@ -1,5 +1,6 @@
 package com.example.ucreation.network;
 
+import com.example.ucreation.model.response.CreationResponse;
 import com.example.ucreation.model.response.TokenResponse;
 import com.google.gson.JsonObject;
 
@@ -16,4 +17,7 @@ public interface ApiEndpoints {
 
     @POST("api-logout")
     Call<JsonObject> logout();
+
+    @GET("creations")
+    Call<CreationResponse> getCreations();
 }

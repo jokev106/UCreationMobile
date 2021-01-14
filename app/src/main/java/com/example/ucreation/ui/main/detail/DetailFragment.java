@@ -26,8 +26,7 @@ import butterknife.ButterKnife;
 public class DetailFragment extends Fragment {
 
 
-    @BindView(R.id.buttontocreation2)
-    Button button;
+
 
     public DetailFragment() {
         // Required empty public constructor
@@ -46,12 +45,6 @@ public class DetailFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ButterKnife.bind(this, view);
-
-        button.setOnClickListener(v -> {
-            NavDirections action = DetailFragmentDirections.actionDetailFragment2ToCreationFragment2();
-            Navigation.findNavController(view).navigate(action);
-        });
     }
 
 }

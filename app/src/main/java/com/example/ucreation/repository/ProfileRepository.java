@@ -17,7 +17,7 @@ import retrofit2.Response;
 
 public class ProfileRepository {
 
-    private static ProfileRepository eventRepository;
+    private static ProfileRepository profileRepository;
     private RetrofitService apiService;
     private static final String TAG = "ProfileRepository";
 
@@ -26,15 +26,15 @@ public class ProfileRepository {
     }
 
     public static ProfileRepository getInstance(String token) {
-        if (eventRepository == null) {
-            eventRepository = new ProfileRepository(token);
+        if (profileRepository == null) {
+            profileRepository = new ProfileRepository(token);
         }
-        return eventRepository;
+        return profileRepository;
     }
 
     public synchronized void resetInstance() {
-        if (eventRepository != null) {
-            eventRepository = null;
+        if (profileRepository != null) {
+            profileRepository = null;
         }
     }
 

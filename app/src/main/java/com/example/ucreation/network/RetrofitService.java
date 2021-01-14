@@ -1,5 +1,6 @@
 package com.example.ucreation.network;
 
+import com.example.ucreation.model.response.CreationResponse;
 import com.example.ucreation.model.response.TokenResponse;
 import com.example.ucreation.util.Constants;
 import com.google.gson.JsonObject;
@@ -36,7 +37,7 @@ public class RetrofitService {
         }
 
         api = new Retrofit.Builder()
-//                .baseUrl(Constants.BASE_URL)
+                .baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client.build())
                 .build()
@@ -62,6 +63,11 @@ public class RetrofitService {
 
 
     public Call<JsonObject> logout(){
+
         return api.logout();
+    }
+
+    public Call<CreationResponse> getCreations(){
+        return api.getCreations();
     }
 }
