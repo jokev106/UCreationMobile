@@ -38,7 +38,7 @@ public class CreationRepository {
     }
 
     public MutableLiveData<List<Creation>> getCreations() {
-        MutableLiveData<List<Creation>> liveEvents = new MutableLiveData<>();
+        MutableLiveData<List<Creation>> liveCreations = new MutableLiveData<>();
 
         apiService.getCreations().enqueue(new Callback<CreationResponse>() {
             @Override
@@ -46,7 +46,7 @@ public class CreationRepository {
                 Log.d(TAG, "onResponse" + response.code());
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
-                        liveEvents.postValue(response.body().getResults());
+                        liveCreations.postValue(response.body().getResults());
                     }
                 }
 
@@ -57,6 +57,6 @@ public class CreationRepository {
                 Log.d(TAG, "onFailure" + t.getMessage());
             }
         });
-        return liveEvents;
+        return liveCreations;
     }
 }

@@ -7,7 +7,7 @@ import java.lang.annotation.Retention;
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 public class Constants {
-    public final static String BASE_URL = "";
+    public final static String BASE_URL = "http://192.168.1.6/UAS/UCreationWeb/public/api/";
     public static final String BASE_IMAGE_URL = "";
 
     @Retention(SOURCE)

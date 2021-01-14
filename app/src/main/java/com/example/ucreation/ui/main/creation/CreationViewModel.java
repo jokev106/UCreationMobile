@@ -12,20 +12,20 @@ public class CreationViewModel  extends ViewModel {
 
     private CreationRepository repository;
 
-    public CreationViewModel() {
-
-    }
-    public void init(String token){
+    public CreationViewModel(String token) {
         repository = CreationRepository.getInstance(token);
     }
+//    public void init(String token){
+//        repository = CreationRepository.getInstance(token);
+//    }
 
     public LiveData<List<Creation>> getCreations(){
         return repository.getCreations();
     }
 
-    @Override
-    protected void onCleared() {
-        super.onCleared();
-        repository.resetInstance();
-    }
+//    @Override
+//    protected void onCleared() {
+//        super.onCleared();
+//        repository.resetInstance();
+//    }
 }
