@@ -65,15 +65,15 @@ public class CreationFragment extends Fragment {
         if (creations != null){
             adapter.setListcreation(creations);
             adapter.notifyDataSetChanged();
-            showLoading(false);
+//            showLoading(false);
         }
     };
-    private void showLoading(Boolean state) {
-        if (state) {
-            rvCreation.setVisibility(View.GONE);
-        } else {
-            rvCreation.setVisibility(View.VISIBLE);
-        }
-    }
+//    private void showLoading(Boolean state) {
+//        if (state) {
+//            rvCreation.setVisibility(View.GONE);
+//        } else {
+//            rvCreation.setVisibility(View.VISIBLE);
+//        }
+//    }
 
 }
