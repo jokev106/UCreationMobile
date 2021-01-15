@@ -8,58 +8,55 @@
     tools:context=".ui.main.detail.DetailFragment">
 
 
-    <TextView
-        android:id="@+id/TextNamaProject"
-        android:layout_width="374dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="14dp"
-        android:background="@color/BackgrounInput"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/DeskripsiPorject"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <TextView
-        android:id="@+id/DeskripsiPorject"
-        android:layout_width="374dp"
-        android:layout_height="252dp"
-        android:layout_marginTop="68dp"
-        android:background="@color/BackgrounInput"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/TextNamaProject" />
-
-    <TextView
-        android:id="@+id/CreatorProject"
-        android:layout_width="376dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="270dp"
-        android:background="@color/BackgrounInput"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/DeskripsiPorject" />
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="374dp"
         android:layout_height="227dp"
+        android:foregroundGravity="center"
         android:layout_marginTop="25dp"
         android:src="@drawable/ic_grid"
-        app:layout_constraintBottom_toTopOf="@+id/TextNamaProject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
 
+            <TextView
+                android:id="@+id/JudulProject"
+                android:gravity="center"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:textSize="24dp"
+                android:text="Judul Project"
+                android:textColor="@color/black"
+                ></TextView>
+
+        <TextView
+            android:id="@+id/DeskripsiProject"
+            android:gravity="center"
+            android:layout_width="374dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="24dp"
+            android:text="Deskripsi Project"
+            android:textColor="@color/black"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/TeamProject"
+            android:gravity="center"
+            android:layout_width="374dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="24dp"
+            android:text="Team : "
+            android:textColor="@color/black"
+            ></TextView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
