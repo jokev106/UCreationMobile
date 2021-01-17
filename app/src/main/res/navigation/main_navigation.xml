@@ -13,6 +13,9 @@
         <action
             android:id="@+id/actionstologin"
             app:destination="@id/Loginpage" />
+        <action
+            android:id="@+id/action_splashFragment_to_nav_creation"
+            app:destination="@id/nav_creation" />
     </fragment>
     <fragment
         android:id="@+id/nav_creation"

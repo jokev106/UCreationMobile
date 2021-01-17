@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.ucreation.R;
+import com.example.ucreation.util.SharedPreferenceHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,10 +44,16 @@ public class SplashFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        SharedPreferenceHelper helper = SharedPreferenceHelper.getInstance(requireActivity());
 
         new Handler().postDelayed(() -> {
             NavDirections action = SplashFragmentDirections.actionstologin();
+            if (helper.getAccessToken().isEmpty()){
+                // request ke api apakah tokenmu masih jalan atau tyduck(kalau tyduck send request lagi pake yang refresh token
+                action = SplashFragmentDirections.actionstologin();
+            } else{
+                action = SplashFragmentDirections.actionSplashFragmentToNavCreation();
+            }
             Navigation.findNavController(view).navigate(action);
         }, 1500);
     }

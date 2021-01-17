@@ -1,9 +1,12 @@
 package com.example.ucreation.model.local;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.example.ucreation.util.Constants;
 import com.google.gson.annotations.SerializedName;
 
-public class Creation {
+public class Creation implements Parcelable {
     @SerializedName("name")
     String name;
 
@@ -33,6 +36,31 @@ public class Creation {
 
     @SerializedName("course_year_lecturer")
     String course_year_lecturer;
+
+    protected Creation(Parcel in) {
+        name = in.readString();
+        date = in.readString();
+        course = in.readString();
+        short_desc = in.readString();
+        long_desc = in.readString();
+        picture = in.readString();
+        created_by = in.readString();
+        creator_team = in.readString();
+        status = in.readString();
+        course_year_lecturer = in.readString();
+    }
+
+    public static final Creator<Creation> CREATOR = new Creator<Creation>() {
+        @Override
+        public Creation createFromParcel(Parcel in) {
+            return new Creation(in);
+        }
+
+        @Override
+        public Creation[] newArray(int size) {
+            return new Creation[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -112,5 +140,25 @@ public class Creation {
 
     public void setCourse_year_lecturer(String course_year_lecturer) {
         this.course_year_lecturer = course_year_lecturer;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(date);
+        dest.writeString(course);
+        dest.writeString(short_desc);
+        dest.writeString(long_desc);
+        dest.writeString(picture);
+        dest.writeString(created_by);
+        dest.writeString(creator_team);
+        dest.writeString(status);
+        dest.writeString(course_year_lecturer);
     }
 }
