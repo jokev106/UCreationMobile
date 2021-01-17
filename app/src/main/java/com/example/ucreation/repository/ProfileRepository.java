@@ -2,6 +2,7 @@ package com.example.ucreation.repository;
 
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.ucreation.network.RetrofitService;
@@ -39,7 +40,7 @@ public class ProfileRepository {
     }
 
 
-    public MutableLiveData<String> logout() {
+    public LiveData<String> logout() {
 
         MutableLiveData<String> message = new MutableLiveData<>();
 

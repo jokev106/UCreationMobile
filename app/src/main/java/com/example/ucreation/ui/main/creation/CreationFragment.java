@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 
 import com.example.ucreation.R;
 import com.example.ucreation.model.local.Creation;
+import com.example.ucreation.util.SharedPreferenceHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,6 +36,7 @@ public class CreationFragment extends Fragment {
 
     private CreationViewModel viewModel;
     private CreationAdapter adapter;
+    private SharedPreferenceHelper helper;
 
     public CreationFragment() {
         // Required empty public constructor
@@ -57,7 +59,9 @@ public class CreationFragment extends Fragment {
         rvCreation.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvCreation.setAdapter(adapter);
 
+        helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(CreationViewModel.class);
+        viewModel.init(helper.getAccessToken());
         viewModel.getCreations().observe(requireActivity(), observeViewModel);
     }
 
@@ -65,15 +69,8 @@ public class CreationFragment extends Fragment {
         if (creations != null){
             adapter.setListcreation(creations);
             adapter.notifyDataSetChanged();
-//            showLoading(false);
         }
     };
-//    private void showLoading(Boolean state) {
-//        if (state) {
-//            rvCreation.setVisibility(View.GONE);
-//        } else {
-//            rvCreation.setVisibility(View.VISIBLE);
-//        }
-//    }
+
 
 }

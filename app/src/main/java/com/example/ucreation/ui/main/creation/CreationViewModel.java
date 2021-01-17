@@ -12,6 +12,9 @@ public class CreationViewModel  extends ViewModel {
 
     private CreationRepository repository;
 
+    public CreationViewModel(){
+
+    }
 //    public CreationViewModel(String token) {
 //        repository = CreationRepository.getInstance(token);
 //    }
@@ -23,9 +26,9 @@ public class CreationViewModel  extends ViewModel {
         return repository.getCreations();
     }
 
-//    @Override
-//    protected void onCleared() {
-//        super.onCleared();
-//        repository.resetInstance();
-//    }
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        repository.resetInstance();
+    }
 }

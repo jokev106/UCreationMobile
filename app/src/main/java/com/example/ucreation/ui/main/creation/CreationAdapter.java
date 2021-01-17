@@ -25,15 +25,15 @@ import java.util.List;
 public class CreationAdapter extends RecyclerView.Adapter<CreationAdapter.CardViewViewHolder> {
 
     private final Context context;
-    private List<Creation> listcreation;
+    private List<Creation> listCreation;
     private List<Creation> getListcreation() {
-        return listcreation;
+        return listCreation;
     }
-    public void setListcreation(List<Creation> listcreation) {
-        this.listcreation = listcreation;
+    public void setListcreation(List<Creation> listCreation) {
+        this.listCreation = listCreation;
     }
     public CreationAdapter(Context context) {
-        this.listcreation = new ArrayList<Creation>();
+        this.listCreation = new ArrayList<Creation>();
         this.context = context;
     }
 

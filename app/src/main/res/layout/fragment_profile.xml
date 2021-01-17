@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.circularreveal.CircularRevealRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,16 +8,19 @@
     tools:context=".ui.main.profile.ProfileFragment">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
+        android:id="@+id/Bar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
-        android:id="@+id/Bar">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            android:id="@+id/toolbar">
+            android:background="?android:attr/windowBackground">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -34,153 +37,161 @@
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/options"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/options"
-                    android:src="@drawable/ic_options"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_options" />
 
 
             </RelativeLayout>
-            
+
         </androidx.appcompat.widget.Toolbar>
-        
+
     </com.google.android.material.appbar.AppBarLayout>
-    
+
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Bar">
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ScrollView>
-        
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Bar">
+
         <LinearLayout
+            android:id="@+id/top_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="189dp"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
 
             <LinearLayout
-                android:id="@+id/top_bar"
-                android:layout_width="match_parent"
-                android:layout_height="189dp"
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/image_profile"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp" />
+                android:layout_width="296dp"
+                android:layout_height="111dp"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="4dp">
 
                 <LinearLayout
-                    android:layout_width="296dp"
-                    android:layout_height="111dp"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="4dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <LinearLayout
+                        <TextView
+                            android:id="@+id/Project"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:layout_gravity="center"
+                            android:textColor="@color/design_default_color_primary_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/Project"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:textColor="@color/design_default_color_primary_dark"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Project" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="75dp"
-                            android:orientation="vertical">
+                            android:text="Project" />
 
-                            <TextView
-                                android:id="@+id/Like"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:textColor="@color/design_default_color_primary_dark"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Likes" />
-
-                        </LinearLayout>
 
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/buttonlogout"
-                        android:layout_width="match_parent"
-                        android:layout_height="38dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/design_default_color_primary_dark"
-                        android:text="Logout" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="75dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Like"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/design_default_color_primary_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Likes" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="-5dp"
-                android:layout_marginRight="-5dp"
-                android:id="@+id/last_bar"
-                android:background="@drawable/button_black"
-                android:orientation="horizontal">
-                
-                <ImageButton
+                <Button
+                    android:id="@+id/buttonlogout"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:id="@+id/my_photo"
-                    android:src="@drawable/ic_grid"
-                    style="@android:attr/buttonBarButtonStyle"/>
-                
+                    android:layout_height="38dp"
+                    android:background="@color/design_default_color_primary_dark"
+                    android:text="Logout"
+                    tools:layout_editor_absoluteY="292dp" />
+
             </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="489dp" />
-
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/last_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="-5dp"
+            android:background="@drawable/button_black"
+            android:orientation="horizontal">
 
-<!--    <Button-->
-<!--        android:id="@+id/buttonlogout"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginBottom="315dp"-->
-<!--        android:text="Logout"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-</com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+            <ImageButton
+                android:id="@+id/my_photo"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_grid" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="489dp" />
+
+
+    </LinearLayout>
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/buttonlogout"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="315dp"-->
+    <!--        android:text="Logout"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 

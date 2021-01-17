@@ -44,7 +44,6 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
 
     }
@@ -55,9 +54,9 @@ public class ProfileFragment extends Fragment {
         ButterKnife.bind(this, view);
         Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
 
+        helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
         viewModel.init(helper.getAccessToken());
-        helper = SharedPreferenceHelper.getInstance(requireActivity());
         Log.d("accesstoken", helper.getAccessToken());
 
         btnlogout.setOnClickListener(v -> {

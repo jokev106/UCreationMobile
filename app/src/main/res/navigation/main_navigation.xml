@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/actionstologin"
-            app:destination="@id/loginFragment3" />
+            app:destination="@id/Loginpage" />
     </fragment>
     <fragment
         android:id="@+id/nav_creation"
@@ -39,7 +39,7 @@
             app:destination="@id/nav_profile" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment3"
+        android:id="@+id/Loginpage"
         android:name="com.example.ucreation.ui.main.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
@@ -57,7 +57,7 @@
             app:destination="@id/detailFragment2" />
         <action
             android:id="@+id/action_profileFragment2_to_loginFragment3"
-            app:destination="@id/loginFragment3" />
+            app:destination="@id/Loginpage" />
         <action
             android:id="@+id/action_profileFragment2_to_creationFragment2"
             app:destination="@id/nav_creation" />
