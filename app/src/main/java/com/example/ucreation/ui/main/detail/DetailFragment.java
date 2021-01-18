@@ -70,19 +70,19 @@ public class DetailFragment extends Fragment {
         helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(DetailViewModel.class);
         viewModel.init(helper.getAccessToken());
-//        viewModel.getCreations().observe(requireActivity(), observeViewModel);
-
-
+        if (getArguments() != null) {
+            creation = DetailFragmentArgs.fromBundle(getArguments()).getCreation();
+            loadCreation(view, creation);
+        }
     }
 
-    private Observer<List<Creation>> observeViewModel = creations -> {
-            Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setTitle(creation.getName());
-//            Glide.with(getActivity()).load(creation.getPicture()).into(detailimgproject);
-            judulproject.setText(creation.getName());
-            descproject.setText(creation.getLong_desc());
-            teamproject.setText(creation.getCreator_team());
-
-    };
+    private void loadCreation(View view, Creation creation) {
+        Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setTitle(creation.getName());
+        Glide.with(getActivity()).load(creation.getPicture()).into(detailimgproject);
+        judulproject.setText(creation.getName());
+        descproject.setText(creation.getLong_desc());
+        teamproject.setText(creation.getCreator_team());
+    }
 
 
 }

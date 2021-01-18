@@ -51,7 +51,7 @@ public class CreationAdapter extends RecyclerView.Adapter<CreationAdapter.CardVi
 //        Glide.with(context).load(creation.setPicture()).centerCrop().into(holder.img);
         holder.projectname.setText(creation.getName());
         holder.itemView.setOnClickListener(view -> {
-            NavDirections action = CreationFragmentDirections.actionCreationFragment2ToDetailFragment2();
+            NavDirections action = CreationFragmentDirections.actionCreationFragment2ToDetailFragment2(creation);
             Navigation.findNavController(view).navigate(action);
         });
         Log.d("Creation",creation.getPicture());

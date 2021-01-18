@@ -70,6 +70,8 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
         Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
 
         viewModel = ViewModelProviders.of(requireActivity()).get(LoginViewModel.class);

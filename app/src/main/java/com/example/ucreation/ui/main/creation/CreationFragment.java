@@ -57,7 +57,6 @@ public class CreationFragment extends Fragment {
         adapter = new CreationAdapter(getContext());
 
         rvCreation.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rvCreation.setAdapter(adapter);
 
         helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(CreationViewModel.class);
@@ -69,6 +68,7 @@ public class CreationFragment extends Fragment {
         if (creations != null){
             adapter.setListcreation(creations);
             adapter.notifyDataSetChanged();
+            rvCreation.setAdapter(adapter);
         }
     };
 

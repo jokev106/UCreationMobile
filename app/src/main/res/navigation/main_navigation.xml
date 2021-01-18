@@ -40,6 +40,10 @@
         <action
             android:id="@+id/action_detailFragment2_to_profileFragment2"
             app:destination="@id/nav_profile" />
+        <argument
+            android:name="creation"
+            app:argType="com.example.ucreation.model.local.Creation"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/Loginpage"

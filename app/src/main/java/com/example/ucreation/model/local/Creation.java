@@ -37,6 +37,7 @@ public class Creation implements Parcelable {
     @SerializedName("course_year_lecturer")
     String course_year_lecturer;
 
+
     protected Creation(Parcel in) {
         name = in.readString();
         date = in.readString();
