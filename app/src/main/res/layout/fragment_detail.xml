@@ -9,7 +9,7 @@
     tools:context=".ui.main.detail.DetailFragment">
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/img_project"
         android:layout_width="211dp"
         android:layout_height="199dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,7 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/NamaProjectDetail"
+        android:id="@+id/JudulProject"
         android:layout_width="346dp"
         android:layout_height="37dp"
         android:layout_marginTop="40dp"
@@ -36,27 +36,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintTop_toBottomOf="@+id/img_project" />
 
     <TextView
         android:id="@+id/DeskripsiProject"
-        android:background="@drawable/shadow"
-        android:elevation="20dp"
-        android:paddingTop="5dp"
         android:layout_width="346dp"
-        android:layout_height="225dp"
+        android:layout_height="150dp"
         android:layout_marginStart="42dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="42dp"
+        android:background="@drawable/shadow"
+        android:elevation="20dp"
+        android:paddingTop="5dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#7965FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NamaProjectDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/JudulProject" />
 
     <TextView
-        android:id="@+id/NamaTeam"
+        android:id="@+id/DateProject"
         android:background="@drawable/shadow"
         android:elevation="20dp"
         android:layout_width="346dp"

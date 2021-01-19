@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
@@ -20,11 +19,9 @@ import com.bumptech.glide.Glide;
 import com.example.ucreation.R;
 import com.example.ucreation.model.local.Creation;
 import com.example.ucreation.ui.MainActivity;
-import com.example.ucreation.ui.main.creation.CreationViewModel;
 import com.example.ucreation.util.SharedPreferenceHelper;
 
 
-import java.util.List;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -38,8 +35,8 @@ public class DetailFragment extends Fragment {
     @BindView(R.id.DeskripsiProject)
     TextView descproject;
 
-    @BindView(R.id.TeamProject)
-    TextView teamproject;
+    @BindView(R.id.DateProject)
+    TextView dateproject;
 
     @BindView(R.id.img_project)
     ImageView detailimgproject;
@@ -81,7 +78,7 @@ public class DetailFragment extends Fragment {
         Glide.with(getActivity()).load(creation.getPicture()).into(detailimgproject);
         judulproject.setText(creation.getName());
         descproject.setText(creation.getLong_desc());
-        teamproject.setText(creation.getCreator_team());
+        dateproject.setText(creation.getDate());
     }
 
 
