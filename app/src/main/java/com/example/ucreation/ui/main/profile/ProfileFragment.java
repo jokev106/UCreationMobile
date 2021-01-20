@@ -14,9 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.ucreation.R;
+import com.example.ucreation.model.local.Creation;
+import com.example.ucreation.model.local.Profile;
 import com.example.ucreation.ui.MainActivity;
 import com.example.ucreation.ui.main.login.LoginViewModel;
 import com.example.ucreation.util.SharedPreferenceHelper;
@@ -29,10 +33,14 @@ import butterknife.ButterKnife;
 
 public class ProfileFragment extends Fragment {
 
-    @BindView(R.id.buttonlogout)
+    @BindView(R.id.button_logout)
     Button btnlogout;
 
+    @BindView(R.id.username_profile)
+    TextView username;
 
+
+    private Profile profile;
     private ProfileViewModel viewModel;
     private SharedPreferenceHelper helper;
 
@@ -57,6 +65,11 @@ public class ProfileFragment extends Fragment {
         helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
         viewModel.init(helper.getAccessToken());
+
+
+
+
+
         Log.d("accesstoken", helper.getAccessToken());
 
         btnlogout.setOnClickListener(v -> {
@@ -69,5 +82,10 @@ public class ProfileFragment extends Fragment {
                 }
             });
         });
+    }
+    private void loadProfile (View view,Profile profile) {
+//        .setText(creation.getName());
+//        descproject.setText(creation.getLong_desc());
+//        dateproject.setText(creation.getDate());
     }
 }
