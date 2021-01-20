@@ -51,9 +51,9 @@ public class ProfileRepository {
             public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
                 Log.d(TAG, "onResponse" + response.code());
                 if (response.isSuccessful()) {
-                 
+                    if (response.body() != null) {
                         liveProfiles.postValue(response.body().getResults());
-
+                    }
                 }
 
             }
