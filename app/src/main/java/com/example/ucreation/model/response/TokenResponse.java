@@ -29,7 +29,7 @@ public class TokenResponse {
         return refreshToken;
     }
 
-    public String getAuthorization(){
+    public String getAuthorization() {
         return this.tokenType + " " + this.accessToken;
     }
 }

@@ -70,7 +70,7 @@ public class ProfileFragment extends Fragment {
         helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
         viewModel.init(helper.getAccessToken());
-//        viewModel.getProfiles().observe(requireActivity(), observeViewModel);
+        viewModel.getProfiles().observe(requireActivity(), observeViewModel);
 
         Log.d("accesstoken", helper.getAccessToken());
 
@@ -85,11 +85,11 @@ public class ProfileFragment extends Fragment {
             });
         });
     }
-//    private Observer<List<Profile>> observeViewModel = profiles -> {
-//           username.setText(profile.getName());
-//           email.setText(profile.getEmail());
-//
-//    };
+    private Observer<List<Profile>> observeViewModel = profiles -> {
+           username.setText(profile.getName());
+           email.setText(profile.getEmail());
+
+    };
 //    private void loadProfile (View view,Profile profile) {
 //        username.setText(profile.getName());
 //        email.setText(profile.getEmail());
