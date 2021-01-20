@@ -8,22 +8,10 @@
     android:elevation="200dp"
     tools:context=".ui.main.detail.DetailFragment">
 
-    <ImageView
-        android:id="@+id/img_project"
-        android:layout_width="211dp"
-        android:layout_height="199dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.09"
-        tools:src="@tools:sample/avatars" />
-
     <TextView
         android:id="@+id/JudulProject"
         android:layout_width="346dp"
         android:layout_height="37dp"
-        android:layout_marginTop="40dp"
         android:background="@drawable/shadow"
         android:elevation="20dp"
         android:fontFamily="@font/raleway_bold"
@@ -57,19 +45,29 @@
 
     <TextView
         android:id="@+id/DateProject"
-        android:background="@drawable/shadow"
-        android:elevation="20dp"
         android:layout_width="346dp"
         android:layout_height="53dp"
-        android:paddingTop="5dp"
         android:layout_marginTop="32dp"
+        android:background="@drawable/shadow"
+        android:elevation="20dp"
         android:fontFamily="sans-serif"
+        android:paddingTop="5dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#7965FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DeskripsiProject" />
+
+    <ImageView
+        android:id="@+id/img_project"
+        android:layout_width="211dp"
+        android:layout_height="199dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_grid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
