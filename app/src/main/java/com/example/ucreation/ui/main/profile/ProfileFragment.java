@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
@@ -18,15 +17,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.ucreation.R;
-import com.example.ucreation.model.local.Creation;
-import com.example.ucreation.model.local.Profile;
 import com.example.ucreation.ui.MainActivity;
-import com.example.ucreation.ui.main.login.LoginViewModel;
 import com.example.ucreation.util.SharedPreferenceHelper;
 
-import java.util.List;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -45,7 +39,6 @@ public class ProfileFragment extends Fragment {
     TextView email;
 
 
-    private Profile profile;
     private ProfileViewModel viewModel;
     private SharedPreferenceHelper helper;
 
@@ -70,7 +63,6 @@ public class ProfileFragment extends Fragment {
         helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
         viewModel.init(helper.getAccessToken());
-        viewModel.getProfiles().observe(requireActivity(), observeViewModel);
 
         Log.d("accesstoken", helper.getAccessToken());
 
@@ -85,17 +77,7 @@ public class ProfileFragment extends Fragment {
             });
         });
     }
-    private Observer<List<Profile>> observeViewModel = new Observer<List<Profile>>() {
-        @Override
-        public void onChanged(List<Profile> profiles) {
-            if (profiles != null){
-                Profile profile = profiles.get(0);
-                  username.setText(profile.getName());
-                 email.setText(profile.getEmail());
 
-            }
-        }
-    };
 //    private void loadProfile (View view,Profile profile) {
 //        username.setText(profile.getName());
 //        email.setText(profile.getEmail());
