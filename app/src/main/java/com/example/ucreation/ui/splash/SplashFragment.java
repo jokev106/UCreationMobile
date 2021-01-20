@@ -49,7 +49,7 @@ public class SplashFragment extends Fragment {
         new Handler().postDelayed(() -> {
             NavDirections action = SplashFragmentDirections.actionstologin();
             if (helper.getAccessToken().isEmpty()){
-                // request ke api apakah tokenmu masih jalan atau tyduck(kalau tyduck send request lagi pake yang refresh token
+
                 action = SplashFragmentDirections.actionstologin();
             } else{
                 action = SplashFragmentDirections.actionSplashFragmentToNavCreation();

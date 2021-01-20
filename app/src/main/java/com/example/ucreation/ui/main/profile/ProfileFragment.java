@@ -85,10 +85,16 @@ public class ProfileFragment extends Fragment {
             });
         });
     }
-    private Observer<List<Profile>> observeViewModel = profiles -> {
-           username.setText(profile.getName());
-           email.setText(profile.getEmail());
+    private Observer<List<Profile>> observeViewModel = new Observer<List<Profile>>() {
+        @Override
+        public void onChanged(List<Profile> profiles) {
+            if (profiles != null){
+                Profile profile = profiles.get(0);
+                  username.setText(profile.getName());
+                 email.setText(profile.getEmail());
 
+            }
+        }
     };
 //    private void loadProfile (View view,Profile profile) {
 //        username.setText(profile.getName());

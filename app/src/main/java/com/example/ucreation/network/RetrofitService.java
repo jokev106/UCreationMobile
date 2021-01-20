@@ -54,9 +54,6 @@ public class RetrofitService {
         return service;
     }
 
-//    public static RetrofitService getInstance() {
-//        return service;
-//    }
 
     public Call<TokenResponse> login(String email, String password) {
         return api.login(email, password);
