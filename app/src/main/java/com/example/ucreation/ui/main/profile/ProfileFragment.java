@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ucreation.R;
+import com.example.ucreation.model.local.Profile;
 import com.example.ucreation.ui.MainActivity;
 import com.example.ucreation.util.SharedPreferenceHelper;
 
@@ -78,8 +79,8 @@ public class ProfileFragment extends Fragment {
         });
     }
 
-//    private void loadProfile (View view,Profile profile) {
-//        username.setText(profile.getName());
-//        email.setText(profile.getEmail());
-//    }
+    private void loadProfile (View view, Profile profile) {
+        username.setText(profile.getName());
+        email.setText(profile.getEmail());
+    }
 }
