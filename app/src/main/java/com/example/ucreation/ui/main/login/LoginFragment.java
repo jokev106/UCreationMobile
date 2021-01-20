@@ -71,7 +71,7 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+//        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
         Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
 
         viewModel = ViewModelProviders.of(requireActivity()).get(LoginViewModel.class);
@@ -95,6 +95,12 @@ public class LoginFragment extends Fragment {
             }
 
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        ((MainActivity)getActivity()).getSupportActionBar().hide();
     }
 }
 
