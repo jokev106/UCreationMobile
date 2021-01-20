@@ -1,6 +1,7 @@
 package com.example.ucreation.network;
 
 import com.example.ucreation.model.response.CreationResponse;
+import com.example.ucreation.model.response.ProfileResponse;
 import com.example.ucreation.model.response.TokenResponse;
 import com.example.ucreation.util.Constants;
 import com.google.gson.JsonObject;
@@ -66,6 +67,10 @@ public class RetrofitService {
 
     public Call<CreationResponse> getCreations() {
         return api.getCreations();
+    }
+
+    public Call<ProfileResponse> getProfiles() {
+        return api.getProfiles();
     }
 
     }

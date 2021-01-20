@@ -5,6 +5,8 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.ucreation.model.local.Profile;
+import com.example.ucreation.model.response.ProfileResponse;
 import com.example.ucreation.network.RetrofitService;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -41,6 +43,28 @@ public class ProfileRepository {
         }
     }
 
+    public MutableLiveData<List<Profile>> getProfiles() {
+        MutableLiveData<List<Profile>> liveProfiles = new MutableLiveData<>();
+
+        apiService.getProfiles().enqueue(new Callback<ProfileResponse>() {
+            @Override
+            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
+                Log.d(TAG, "onResponse" + response.code());
+                if (response.isSuccessful()) {
+                 
+                        liveProfiles.postValue(response.body().getResults());
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ProfileResponse> call, Throwable t) {
+                Log.d(TAG, "onFailure" + t.getMessage());
+            }
+        });
+        return liveProfiles;
+    }
 
 
     public LiveData<String> logout() {
