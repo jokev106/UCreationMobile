@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
@@ -22,6 +23,7 @@ import com.example.ucreation.model.local.Profile;
 import com.example.ucreation.ui.MainActivity;
 import com.example.ucreation.util.SharedPreferenceHelper;
 
+import java.util.List;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -79,8 +81,16 @@ public class ProfileFragment extends Fragment {
         });
     }
 
-    private void loadProfile (View view, Profile profile) {
-        username.setText(profile.getName());
-        email.setText(profile.getEmail());
-    }
+    private Observer<List<Profile>> observeViewModel = new Observer<List<Profile>>() {
+        @Override
+        public void onChanged(List<Profile> profiles) {
+            if (profiles != null){
+                Profile profile = profiles.get(0);
+                username.setText(profile.getName());
+                email.setText(profile.getEmail());
+
+            }
+        }
+    };
+    
 }
