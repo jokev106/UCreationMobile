@@ -8,21 +8,22 @@ import com.example.ucreation.repository.CreationRepository;
 
 import java.util.List;
 
-public class CreationViewModel  extends ViewModel {
+public class CreationViewModel extends ViewModel {
 
     private CreationRepository repository;
 
-    public CreationViewModel(){
+    public CreationViewModel() {
 
     }
-//    public CreationViewModel(String token) {
+
+    //    public CreationViewModel(String token) {
 //        repository = CreationRepository.getInstance(token);
 //    }
-    public void init(String token){
+    public void init(String token) {
         repository = CreationRepository.getInstance(token);
     }
 
-    public LiveData<List<Creation>> getCreations(){
+    public LiveData<List<Creation>> getCreations() {
         return repository.getCreations();
     }
 

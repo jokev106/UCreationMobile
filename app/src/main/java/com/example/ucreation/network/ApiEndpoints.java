@@ -1,6 +1,7 @@
 package com.example.ucreation.network;
 
 import com.example.ucreation.model.response.CreationResponse;
+import com.example.ucreation.model.response.ProfileResponse;
 import com.example.ucreation.model.response.TokenResponse;
 import com.google.gson.JsonObject;
 
@@ -20,4 +21,7 @@ public interface ApiEndpoints {
 
     @GET("creations")
     Call<CreationResponse> getCreations();
+
+    @GET("profile")
+    Call<ProfileResponse> getProfiles();
 }

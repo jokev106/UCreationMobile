@@ -1,6 +1,7 @@
 package com.example.ucreation.network;
 
 import com.example.ucreation.model.response.CreationResponse;
+import com.example.ucreation.model.response.ProfileResponse;
 import com.example.ucreation.model.response.TokenResponse;
 import com.example.ucreation.util.Constants;
 import com.google.gson.JsonObject;
@@ -19,7 +20,7 @@ public class RetrofitService {
 
         OkHttpClient.Builder client = new OkHttpClient.Builder();
 
-        if(token.equals("")){
+        if (token.equals("")) {
             client.addInterceptor(chain -> {
                 Request request = chain.request().newBuilder()
                         .addHeader("Accept", "application/json")
@@ -47,7 +48,7 @@ public class RetrofitService {
     public static RetrofitService getInstance(String token) {
         if (service == null) {
             service = new RetrofitService(token);
-        } else if (!token.equals("")){
+        } else if (!token.equals("")) {
             service = new RetrofitService(token);
         }
         return service;
@@ -62,12 +63,16 @@ public class RetrofitService {
     }
 
 
-    public Call<JsonObject> logout(){
+    public Call<JsonObject> logout() {
 
         return api.logout();
     }
 
-    public Call<CreationResponse> getCreations(){
+    public Call<CreationResponse> getCreations() {
         return api.getCreations();
+    }
+
+    public Call<ProfileResponse> getProfiles() {
+        return api.getProfiles();
     }
 }
