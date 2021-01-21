@@ -75,7 +75,7 @@ public class DetailFragment extends Fragment {
 
     private void loadCreation(View view, Creation creation) {
         Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setTitle(creation.getName());
-//        Glide.with(getActivity()).load(creation.getPicture()).into(detailimgproject);
+        Glide.with(getActivity()).load(creation.getPicture()).into(detailimgproject);
         judulproject.setText(creation.getName());
         descproject.setText(creation.getLong_desc());
         dateproject.setText(creation.getDate());

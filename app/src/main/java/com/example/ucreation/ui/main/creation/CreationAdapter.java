@@ -48,7 +48,7 @@ public class CreationAdapter extends RecyclerView.Adapter<CreationAdapter.CardVi
     @Override
     public void onBindViewHolder(@NonNull final CreationAdapter.CardViewViewHolder holder, int position) {
         Creation creation = getListcreation().get(position);
-//       Glide.with(context).load(creation.setPicture()).centerCrop().into(holder.img);
+        Glide.with(context).load(creation.getPicture()).centerCrop().into(holder.img);
         holder.projectname.setText(creation.getName());
         holder.itemView.setOnClickListener(view -> {
             NavDirections action = CreationFragmentDirections.actionCreationFragment2ToDetailFragment2(creation);

@@ -66,7 +66,7 @@ public class ProfileFragment extends Fragment {
         helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
         viewModel.init(helper.getAccessToken());
-
+        viewModel.getProfiles().observe(requireActivity(), observeViewModel);
         Log.d("accesstoken", helper.getAccessToken());
 
         btnlogout.setOnClickListener(v -> {
